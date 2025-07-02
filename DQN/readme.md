@@ -2,7 +2,7 @@
 
 This repository contains a PyTorch implementation of Double DQN for the CartPole-v1 environment using [Gymnasium](https://gymnasium.farama.org/). The code supports logging with [Weights & Biases](https://wandb.ai/), video recording, and evaluation.
 Only diff between Dqn & Double Dqn is Action is choosen By main network Which reduces overestimation bias and converges to optimal policy faster.
-DQN took nearly 450000 steps and Double took around 165000 steps to reach 500 score.
+Double DQN converges 2-3x faster than DQN for CartPole
 ---
 
 ## Parameters
