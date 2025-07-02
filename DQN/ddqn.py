@@ -35,7 +35,7 @@ class Args:
 
     # Algorithm specific arguments
     env_id: str = "CartPole-v1"
-    total_timesteps: int = 500000
+    total_timesteps: int = 300000
     learning_rate: float = 2.5e-4
     num_envs: int = 1
     buffer_size: int = 10000
@@ -111,7 +111,7 @@ def setup_wandb(args, run_name):
 
 def evaluate(model, device, run_name, num_eval_eps=10, record=False):
     """Evaluate model for num_eval_eps episodes. Optionally record frames."""
-    env = make_env(Args.env_id, Args.seed, True, run_name, True)
+    env = make_env(Args.env_id, Args.seed, record, run_name, True)
     env.action_space.seed(Args.seed)
     model = model.to(device)
     model.eval()
